@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar", "Разрабо�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarTest", "Разработка приложения\CalendarTest\CalendarTest.csproj", "{4B0049E4-32DB-41A6-96FF-3717DC70FBCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingCard", "Разработка интерфейса\MeetingCard\MeetingCard.csproj", "{93D393ED-9728-4C3F-81A9-DECFC5778DF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4B0049E4-32DB-41A6-96FF-3717DC70FBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0049E4-32DB-41A6-96FF-3717DC70FBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0049E4-32DB-41A6-96FF-3717DC70FBCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D393ED-9728-4C3F-81A9-DECFC5778DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D393ED-9728-4C3F-81A9-DECFC5778DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D393ED-9728-4C3F-81A9-DECFC5778DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D393ED-9728-4C3F-81A9-DECFC5778DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8F548695-5829-45C2-A158-CDD632B6E521} = {7478E440-9F97-4F76-87AC-E73FCE723BD6}
 		{4B0049E4-32DB-41A6-96FF-3717DC70FBCA} = {7478E440-9F97-4F76-87AC-E73FCE723BD6}
+		{93D393ED-9728-4C3F-81A9-DECFC5778DF3} = {E7B037D6-31D6-45EF-BA35-33053ED0DF83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E795AFE-2D03-4B8D-9402-1232F56C6CA2}
