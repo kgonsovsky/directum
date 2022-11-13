@@ -1,0 +1,106 @@
+﻿<Window x:Class="MeetingCard.UI.View.ResearcherView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:viewModel="clr-namespace:MeetingCard.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="Researcher" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Researcher" Width="auto" Grid.Row="0" Padding="5, 0, 30, 0" Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"><Run Text="Last name"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"><Run Text="First name"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"><Run Text="Middle name"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"><Run Text="Department number"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"><Run Text="Age"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0"><Run Text="Academic degree"/></TextBlock>
+                <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0"><Run Text="Position"/></TextBlock>
+
+                <TextBox x:Name="LastName" Style="{StaticResource placeHolder}" Tag="Enter last name" MaxLength="250" Grid.Row="1" Grid.Column="1" TabIndex="0" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=LastName,
+                        ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+                <TextBox x:Name="FirstName"  Style="{StaticResource placeHolder}" Tag="Etner first name" MaxLength="250" Grid.Row="2" Grid.Column="1" TabIndex="1" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=FirstName,
+                        ValidatesOnDataErrors=true, NotifyOnValidationError=true}" />
+                <TextBox x:Name="MiddleName"  Style="{StaticResource placeHolder}" Tag="Enter middle name" MaxLength="250" Grid.Row="3" Grid.Column="1" TabIndex="2" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=MiddleName,
+                        ValidatesOnDataErrors=true, NotifyOnValidationError=true}" />
+                <xctk:IntegerUpDown x:Name="DepartmentNumber"  MaxLength="250" Grid.Row="4" Grid.Column="1" TabIndex="3" HorizontalAlignment="Left" MinWidth="70" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=DepartmentNumber,
+                                    ValidatesOnDataErrors=true, NotifyOnValidationError=true}" Value="1"/>
+                <xctk:IntegerUpDown x:Name="Age"  MaxLength="250" Grid.Row="5" Grid.Column="1" TabIndex="4" HorizontalAlignment="Left" MinWidth="70" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Age, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+                <ComboBox x:Name="AcademicDegree" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" TabIndex="5" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=AcademicDegree,
+                        ValidatesOnDataErrors=true, NotifyOnValidationError=true}" >
+                    <TextBlock>Associate's Degree</TextBlock>
+                    <TextBlock>Bachelor's Degree</TextBlock>
+                    <TextBlock>Graduate Degree</TextBlock>
+                    <TextBlock>Master's Degree</TextBlock>
+                    <TextBlock>Doctoral Degree</TextBlock>
+                </ComboBox>
+                <TextBox x:Name="Position"  Style="{StaticResource placeHolder}" Tag="Enter position" Grid.Row="7" Grid.Column="1" TabIndex="6" Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Position,
+                                    ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+            </Grid>
+        </GroupBox>
+        <Grid Grid.Row="1" Grid.Column="0" Height="auto">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="AddButton" Command="{Binding UpdateCommand}" Click="btnUpdate_Click" Grid.Row="0" Grid.Column="0" Margin="5" Padding="5">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Mode}">
+                                <DataTrigger.Value>
+                                    <viewModel:Mode>Add</viewModel:Mode>
+                                </DataTrigger.Value>
+                                <Setter Property="Content" Value="Add"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Mode}">
+                                <DataTrigger.Value>
+                                    <viewModel:Mode>Edit</viewModel:Mode>
+                                </DataTrigger.Value>
+                                <Setter Property="Content" Value="Save"/>
+                            </DataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=LastName, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=FirstName, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=MiddleName, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=DepartmentNumber, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=Age, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=AcademicDegree, Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=Position, Path=(Validation.HasError)}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="True"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="CancelButton" Content="Cancel" Command="{Binding CancelCommand}" Click="btnCancel_Click" Grid.Row="0" Grid.Column="1" Margin="5" Padding="5" />
+        </Grid>
+    </Grid>
+</Window>

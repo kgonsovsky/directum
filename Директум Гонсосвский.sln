@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C97D331C-9917-4F19-AB95-F64AA076BA61}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Приложение", "Приложение", "{7478E440-9F97-4F76-87AC-E73FCE723BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Интерфейс", "Интерфейс", "{E7B037D6-31D6-45EF-BA35-33053ED0DF83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "База данных", "База данных", "{CE34B48F-DFE7-4091-8525-93AEFE31D1AC}"
+	ProjectSection(SolutionItems) = preProject
+		Разработка на SQL\A. Cоздать БД.sql = Разработка на SQL\A. Cоздать БД.sql
+		Разработка на SQL\B. Заполнить данными.sql = Разработка на SQL\B. Заполнить данными.sql
+		Разработка на SQL\C. Тест на ошибки.sql = Разработка на SQL\C. Тест на ошибки.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar", "Разработка приложения\Calendar.csproj", "{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingCard.Data", "Разработка интерфейса\MeetingCard.Data\MeetingCard.Data.csproj", "{2167D5C2-B947-49F1-B361-6261F66004A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingCard.Business", "Разработка интерфейса\MeetingCard.Business\MeetingCard.Business.csproj", "{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingCard.UI", "Разработка интерфейса\MeetingCard.UI\MeetingCard.UI.csproj", "{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingCard.Service", "Разработка интерфейса\MeetingCard.Service\MeetingCard.Service.csproj", "{0D5A55EE-0639-4CBF-8483-E3C0898E58EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2167D5C2-B947-49F1-B361-6261F66004A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2167D5C2-B947-49F1-B361-6261F66004A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2167D5C2-B947-49F1-B361-6261F66004A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2167D5C2-B947-49F1-B361-6261F66004A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5A55EE-0639-4CBF-8483-E3C0898E58EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5A55EE-0639-4CBF-8483-E3C0898E58EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5A55EE-0639-4CBF-8483-E3C0898E58EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5A55EE-0639-4CBF-8483-E3C0898E58EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6943D8F-3BA8-48BB-A0C2-D24B630CAD1C} = {7478E440-9F97-4F76-87AC-E73FCE723BD6}
+		{2167D5C2-B947-49F1-B361-6261F66004A1} = {E7B037D6-31D6-45EF-BA35-33053ED0DF83}
+		{BAFC5AAA-2A09-49F3-8469-AEA6E80CEBFE} = {E7B037D6-31D6-45EF-BA35-33053ED0DF83}
+		{1EE2D4CC-F2C1-44AD-9C1E-A04774D6FB91} = {E7B037D6-31D6-45EF-BA35-33053ED0DF83}
+		{0D5A55EE-0639-4CBF-8483-E3C0898E58EC} = {E7B037D6-31D6-45EF-BA35-33053ED0DF83}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E795AFE-2D03-4B8D-9402-1232F56C6CA2}
+	EndGlobalSection
+EndGlobal

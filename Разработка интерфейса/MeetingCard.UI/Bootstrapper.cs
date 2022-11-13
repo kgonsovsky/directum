@@ -1,0 +1,20 @@
+﻿using MeetingCard.UI.Interface;
+using MeetingCard.UI.Service;
+using MeetingCard.UI.View;
+
+namespace MeetingCard.UI
+{
+    public class BootStrapper
+    {
+        public static void Initialize()
+        {
+            //initialize all the services needed for dependency injection
+            //we use the unity framework for dependency injection, but you can choose others
+            ServiceProvider.RegisterServiceLocator(new UnityServiceLocator());
+
+            //register the IModalDialog using an instance of the CustomerViewDialog
+            //this sets up the view
+            ServiceProvider.Instance.Register<IModalDialog, ResearcherViewDialog>();
+        }
+    }
+}
