@@ -55,7 +55,7 @@ BEGIN
         LEFT JOIN [table] t on t.ID = tableStudent.tableId
        )
     begin
-        SELECT @msg=STRING_AGG(concat('Студент ', student.Name, ' не может записаться еще раз на курс "',class.name,'"'), ', ')
+        SELECT @msg=STRING_AGG(concat('Студент ', student.Name, ' не может записаться еще раз на курс по классу "',class.name,'"'), ', ')
         from inserted
         LEFT JOIN [table] t on t.ID = inserted.tableId
              left outer join student on student.id = inserted.studentId
@@ -71,7 +71,7 @@ BEGIN
         union select studentId from Inserted where Inserted.tableId = t.Id) tt) > capacity)
 
     BEGIN
-        SELECT @msg=STRING_AGG(concat('Курс "', className, '" уже содержит ',tt.Taken,' студентов из ', tt.capacity, ' возможных'), ', ')
+        SELECT @msg=STRING_AGG(concat('Этот курс ("', className, '") уже содержит ',tt.Taken,' студентов из ', tt.capacity, ' возможных. Найдите другой курс.'), ', ')
         from (
             select class.name as className,t.id,
                 t.capacity,
@@ -88,5 +88,3 @@ BEGIN
   SELECT inserted.* FROM inserted
 END;
 go
-
-s
